@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏青徒步活动通知</title>
+    <style>
+        /* 全局重置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* 主卡片容器 */
+        .card {
+            background-color: #fff;
+            width: 800px;
+            border: 1px solid #aaccff; /* 整体淡蓝色边框 */
+            padding: 30px 40px;
+            position: relative;
+            color: #444;
+        }
+
+        /* --- 顶部标题区域 --- */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .main-title {
+            font-family: "STXingkai", "KaiTi", cursive; /* 尝试使用行楷/行书字体 */
+            font-size: 42px;
+            color: #2b8ab8; /* 主标题蓝色 */
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            font-size: 16px;
+            color: #666;
+            border: 1px solid #2b8ab8;
+            display: inline-block;
+            padding: 2px 15px;
+            border-radius: 2px;
+            margin-top: 5px;
+        }
+
+        /* --- 正文区域 --- */
+        .greeting {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .intro-text {
+            text-indent: 2em;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .intro-text strong {
+            color: #d9822b; /* 强调文字颜色（偏橙棕色） */
+        }
+
+        /* 内容主体：左图右文 */
+        .content-body {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        /* 左侧图片 */
+        .left-image img {
+            width: 320px;
+            height: auto;
+            display: block;
+        }
+
+        /* 右侧信息框 */
+        .info-box {
+            flex: 1;
+            border: 1px solid #b3d7ff; /* 浅蓝色边框 */
+            background-color: #f0f8ff; /* 浅蓝色背景 */
+            padding: 15px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .info-section {
+            margin-bottom: 15px;
+        }
+
+        .info-title {
+            font-weight: bold;
+            color: #2b8ab8; /* 小标题蓝色 */
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* 列表样式：使用实心圆点 */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+            color: #444;
+        }
+
+        /* 自定义圆点 */
+        .info-list li::before {
+            content: "●";
+            color: #2b8ab8; /* 圆点颜色 */
+            font-size: 10px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .highlight {
+            color: #d9822b; /* 时间强调色 */
+            font-weight: bold;
+        }
+
+        /* --- 底部落款 --- */
+        .footer {
+            text-align: right;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <div class="main-title">放飞身心，踏青徒步</div>
+            <div class="sub-title">——第一期员工踏青徒步活动</div>
+        </div>
+        <div class="greeting">各位公司同仁：</div>
+        <div class="intro-text">
+            在阳光明媚、春暖花开的四月，行政文化中心策划了一次踏青徒步活动，让大家有机会在大自然中放松身心，感受大自然独特的魅力。这次活动将于<strong>4月6日</strong>举行，希望大家能够抓住这个机会，脱离喧嚣的城市生活，摆脱繁忙的工作环境，感受大自然的美妙。
+        </div>
+        <div class="content-body">
+            <div class="left-image">
+                <img src="./taqing.png" alt="春季踏青">
+            </div>
+            <div class="info-box">
+                <div class="info-section">
+                    <div class="info-title">1.活动安排</div>
+                    <ul class="info-list">
+                        <li><span class="highlight">13:00</span>公司门口集合。</li>
+                        <li><span class="highlight">13:30</span>集体徒步前往目的地。</li>
+                        <li><span class="highlight">16:30</span>活动结束，自由活动。</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">2.活动须知</div>
+                    <ul class="info-list">
+                        <li>各位同事请提前安排好工作，如果因为工作原因不能参加活动的同事，请及时通知行政人事部。</li>
+                        <li>公司为所有参与人员准备好了饮用水、面包、餐布等物品。</li>
+                        <li>请各位同事上衣统一穿着公司T恤，选择方便运动、徒步的鞋子。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            行政文化中心<br>
+            2024年3月20日
+        </div>
+    </div>
+
+</body>
+</html>

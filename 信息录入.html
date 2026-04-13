@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息录入</title>
+    <style>
+        /* 全局重置与页面背景 */
+        body {
+            margin: 0;
+            padding: 40px 0;
+            font-family: "Microsoft YaHei","SimHei",sans-serif;
+            background-color: #e0f2f7;
+            display: flex;
+            justify-content: center;
+        }
+        /* 表单容器样式 */
+        form {
+            background-color: transparent;
+        }
+        /* 字段集样式 */
+        fieldset {
+            width: 480px;
+            background-color: #d4e8f4;
+            border:1px solid #99c2e0;
+            border-radius: 8px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* 标题样式 */
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 0 10px;
+        }
+        /* 通用行样式 */
+        label {
+            display: inline-block;
+            width: 85px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+            vertical-align: middle;
+        }
+        /* 输入框、下拉菜单、文本域的统一样式 */
+         input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            flex: 1; 
+            padding: 6px 8px;
+            border: 1px solid #99c2e0;
+            border-radius: 4px;
+            background-color: #fff; 
+            box-sizing: border-box; 
+            outline: none; 
+            vertical-align: middle;
+        }
+        /* 输入框获得焦点时的样式 */
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="file"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #6699cc;
+            box-shadow: 0 0 5px rgba(102, 153, 204, 0.5);
+        }
+        /* 修正单选和复选框的间距 */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+         /* 按钮区域样式 */
+        input[type="submit"],
+        input[type="reset"] {
+            width: 100px; /* 固定按钮宽度 */
+            padding: 8px 0;
+            margin-top: 10px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            background-color: #e0e0e0; /* 浅灰色按钮 */
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s; /* 添加过渡效果 */
+        }
+         /* 按钮悬停效果 */
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #d0d0d0;
+        }
+         /* 减少 br 带来的过大行高，使布局更紧凑 */
+        br {
+            line-height: 15px;
+        }
+         /* 特殊处理：让单选/复选框所在的行布局更自然 */
+        label:has(+ input[type="radio"]),
+        label:has(+ input[type="checkbox"]) {
+            /* 这种高级选择器在现代浏览器有效，若需兼容旧浏览器可忽略 */
+            display: inline-block;
+            width: auto; 
+            text-align: left;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>信息录入</legend>
+             <!-- 姓名 -->
+             <label for="name">姓   名：</label>
+             <input type="text" id="name" placeholder="请输入姓名">
+             <br><br>
+             <!-- 年龄 -->
+             <label for="age">年   龄：</label>
+             <input type="text" id="age" placeholder="请输入数字">
+             <br><br>
+             <!-- 性别 -->
+             <label>性   别：</label>
+             <input type="radio" name="gender" value="male" checked>男
+             <input type="radio" name="gender" value="female">女
+             <br><br>
+             <!-- 语种 -->
+             <label>语   种：</label>
+             <input type="checkbox">英语
+             <input type="checkbox">韩语
+             <input type="checkbox">法语
+             <input type="checkbox">德语
+             <br><br>
+             <!-- 出生日期 -->
+             <label for="birthday">出生日期:</label>
+             <input type="date" name="birthday">
+             <br><br>
+             <!-- 电话号码 -->
+             <label for="phone">电话号码：</label>
+             <input type="text" id="phone" placeholder="请输入电话号码">
+             <br><br>
+             <!-- 邮箱 -->
+             <label for="email">邮   箱：</label>
+             <input type="text" id="email" placeholder="请输入邮箱账号">
+             <br><br>
+             <!-- 学历 -->
+             <label for="education">学   历：</label>
+             <select id="education">
+                <option>本科</option>
+                <option>大专</option>
+                <option>硕士</option>
+                <option>博士</option>
+             </select>
+             <br><br>
+             <!-- 身份证 -->
+             <label for="id_card">身 份 证：</label>
+             <input type="file" id="id_card">
+             <br><br>
+             <!-- 备注 -->
+             <label for="note">备   注：</label>
+             <textarea id="note" rows="4" cols="30" placeholder="若有其他情况，可进行文字说明"></textarea>
+             <br><br>
+             <!-- 提交按钮 -->
+             <input type="submit" value="提交表单">
+             &nbsp;&nbsp;&nbsp;&nbsp;
+             <input type="reset" value="重新填写">
+        </fieldset>
+    </form>
+</body>
+</html>
