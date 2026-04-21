@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐排行榜</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: "微软雅黑", sans-serif;
+        }
+
+        /* 1. 外层黑色唱片背景 */
+        .bg {
+            width: 700px;
+            height: 700px;
+            margin: 50px auto;
+            /* 径向渐变模拟唱片纹路 */
+            background-image: repeating-radial-gradient(circle at 50% 50%, #222, #000 3%);
+            border-radius: 50%;
+            border: 10px solid #ccc;
+            /* 居中内部内容 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* 2. 内部卡片容器 */
+        .sheet {
+            width: 380px;
+            height: 560px;
+            background-color: #fff;
+            border-radius: 30px;
+            /* 大阴影 */
+            box-shadow: 15px 15px 20px rgba(0,0,0,0.4);
+            overflow: hidden; /* 关键：让内部元素遵循圆角裁剪 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. 头部区域 (图片+标题) */
+        .header {
+            height: 230px;
+            background-color: #fff;
+            /* 合并背景图：耳机图在上，文字图在下 */
+            background-image:
+                url(./TOP.jpg),
+                url(./音乐排行榜.jpg);
+            background-repeat: no-repeat;
+            /* 调整两张图的位置：第一张居中偏上，第二张在底部 */
+            background-position: center 30px, center bottom 20px;
+            /* 防止背景图在滚动时溢出圆角（如果有的话） */
+            border-radius: 30px 30px 0 0;
+        }
+
+        /* 4. 列表区域 */
+        .list-content {
+            flex: 1; /* 占据剩余高度 */
+            background-color: #504d58; /* 列表背景色 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around; /* 均匀分布列表项 */
+            padding: 10px 0;
+        }
+
+        /* 5. 列表项样式 */
+        .item {
+            height: 50px;
+            color: #d6d6d6;
+            text-align: center;
+            font-size: 18px;
+            line-height: 50px;
+            /* 添加分割线（除了最后一个） */
+            border-bottom: 1px solid #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        /* 去掉最后一项的分割线 */
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        /* 鼠标悬停效果（可选） */
+        .item:hover {
+            color: #fff;
+            background-color: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg">
+        <div class="sheet">
+            <!-- 头部：包含两张背景图 -->
+            <div class="header"></div>
+
+            <!-- 列表部分 -->
+            <div class="list-content">
+                <div class="item">勋章</div>
+                <div class="item">碎碎念</div>
+                <div class="item">clouds</div>
+                <div class="item">挚爱</div>
+                <div class="item">追梦赤子心</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

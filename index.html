@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>排行榜</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"微软雅黑",sans-serif;
+}
+body{
+    background:#fce4ec;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+.record-bg{
+    width:400px;
+    height:400px;
+    background:#e91e63;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 0 8px #f8bbd0;
+}
+.rank-card{
+    width:280px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+}
+.rank-header{
+    text-align:center;
+    padding:25px 10px;
+}
+.top-logo{
+    color:#e91e63;
+    font-size:40px;
+    font-weight:bold;
+}
+.rank-title{
+    font-size:20px;
+}
+.song-list{
+    background:#d81b60;
+}
+.song-item{
+    padding:12px;
+    text-align:center;
+    color:white;
+    border-bottom:1px solid #ec407a;
+}
+.song-item:last-child{
+    border-bottom:none;
+}
+</style>
 </head>
-<body>demo
+<body>
+<div class="record-bg">
+    <div class="rank-card">
+        <div class="rank-header">
+            <div class="top-logo">TOP</div>
+            <div class="rank-title">音乐排行榜</div>
+        </div>
+        <div class="song-list">
+            <div class="song-item">黄佳乐</div>
+            <div class="song-item">英格拉姆</div>
+            <div class="song-item">晴天</div>
+            <div class="song-item">花海</div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
