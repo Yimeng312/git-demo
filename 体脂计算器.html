@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体脂率计算器</title>
+    <script type="text/javascript">
+        let gender = prompt("请输入你的性别（男/女）");
+        let age = Number(prompt("请输入你的年龄"));
+        let weight = Number(prompt("请输入你的体重(kg)"));
+        let height = Number(prompt("请输入你的身高(cm)"));
+        let bmi = weight / (height*height);
+        let bodyFatRate = 1.2*bmi + 0.23*age - 10.8*0 -5.4;
+        let bodyFatRateFixed = bodyFatRate.toFixed(2);
+        let resultMessage = "您的体脂率是 " + bodyFatRateFixed + "%。";
+        if (gender === "男") {
+            if (bodyFatRate >= 15 && bodyFatRate <= 20) {
+                resultMessage += " 您的身体状况在健康范围内。";
+            } else {
+                resultMessage += " 不在正常范围，请加强锻炼。";
+            }
+        } else if (gender === "女") {
+            if (bodyFatRate >= 20 && bodyFatRate <= 25) {
+                resultMessage += " 您的身体状况在健康范围内。";
+            } else {
+                resultMessage += " 不在正常范围，请加强锻炼。";
+            }
+        } else {
+            resultMessage += " 无法判断健康范围（请输入正确的性别）。";
+        }
+        alert(resultMessage);
+    </script>
+</head>
+<body>
+</body>
+</html>
