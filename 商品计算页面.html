@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue测试</title>
+</head>
+<body>
+
+  <div id="app">
+    <!-- 循环生成三个商品并进行计算 -->
+    <div v-for="item in message" :key="item.name">
+      {{ item.name.toLowerCase() }}的总价为：{{ item.price * item.total }}
+    </div>
+    <div>
+      {{ alertText.split('！').reverse().join('！') }}
+    </div>
+  </div>
+
+  <!-- Vue 引入 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.prod.js"></script>
+
+  <script>
+    const { createApp } = Vue
+    createApp({
+      data() {
+        return {
+          message: [
+            { name: 'LEMON', price: 10, total: 20 },
+            { name: 'BANANA', price: 15, total: 54 },
+            { name: 'ORANGE', price: 9, total: 33 }
+          ],
+          alertText: '欢迎采购！本店橙子今日特价！好消息！'
+        }
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+</html>
